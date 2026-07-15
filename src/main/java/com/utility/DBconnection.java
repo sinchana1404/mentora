@@ -17,7 +17,7 @@ public class DBconnection {
             con = DriverManager.getConnection(
                     "jdbc:mysql://localhost:3306/community_skills",
                     "root",
-                    "Navya@123");
+                    "tiger");
 
         } catch (ClassNotFoundException | SQLException e) {
 

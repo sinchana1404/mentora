@@ -359,6 +359,16 @@ font-size:30px;
         <p class="subtitle">
             Join the community and start exchanging skills
         </p>
+        
+        <% String success=(String)request.getAttribute("success");%>
+        <% if(success!=null){ %>
+        <%="Registration success"%>
+        <% } %>	
+        
+        <% String failure=(String)request.getAttribute("failure");%>
+        <% if(failure!=null){ %>
+        <%="Registration failed"%>
+        <% } %>	
 
         <form action = "register" method = "post">
 
@@ -366,14 +376,28 @@ font-size:30px;
 
             <div class="input-icon">
 
-                <label>Full Name</label>
+                <label>First Name</label>
 
                 <i class="fa fa-user"></i>
 
                 <input
                     type="text"
                     class="form-control"
-                    placeholder="Enter your full name">
+                    name="fname"
+                    placeholder="Enter your first name">
+
+            </div>
+            <div class="input-icon">
+
+                <label>Last Name</label>
+
+                <i class="fa fa-user"></i>
+
+                <input
+                    type="text"
+                    class="form-control"
+                    name="lname"
+                    placeholder="Enter your last name">
 
             </div>
 
@@ -388,6 +412,7 @@ font-size:30px;
                 <input
                     type="email"
                     class="form-control"
+                    name="mail"
                     placeholder="Enter your email">
 
             </div>
@@ -403,6 +428,7 @@ font-size:30px;
                 <input
                     type="password"
                     class="form-control"
+                    name="password"
                     placeholder="Create a strong password">
 
             </div>
@@ -418,6 +444,7 @@ font-size:30px;
                 <input
                     type="text"
                     class="form-control"
+                    name="phone"
                     placeholder="+91 1234567890">
 
             </div>
@@ -432,6 +459,7 @@ font-size:30px;
 
                 <textarea
                     class="form-control"
+                    name="bio"
                     placeholder="Tell the community about yourself..."></textarea>
 
             </div>
@@ -448,7 +476,7 @@ font-size:30px;
 
             Already have an account?
 
-            <a href="Login.html">
+            <a href="Login.jsp">
 
                 Sign In
 

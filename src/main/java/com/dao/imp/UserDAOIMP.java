@@ -16,19 +16,20 @@ public class UserDAOIMP implements UserDAOINF {
 		@Override
 		public boolean registerUser(UserDTO user) {
 
-	        String query = "INSERT INTO users(user_fname,user_lname,email,city,bio,create_at,password) VALUES(?,?,?,?,?,?,?)";
+	        String query = "INSERT INTO users(user_fname,user_lname,email,bio,password,phone_number) VALUES(?,?,?,?,?,?)";
 
 	        try {
 
 	            PreparedStatement ps = con.prepareStatement(query);
 
-	            ps.setString(1, user.getUserFname());
-	            ps.setString(2, user.getUserLname());
+	            ps.setString(1, user.getUser_fname());
+	            ps.setString(2, user.getUser_lname());
 	            ps.setString(3, user.getEmail());
-	            ps.setString(4, user.getCity());
-	            ps.setString(5, user.getBio());
-	            ps.setTimestamp(6, user.getCreateAt());
-	            ps.setString(7, user.getPassword());
+	            
+	            ps.setString(4, user.getBio());
+	            
+	            ps.setString(5, user.getPassword());
+	            ps.setLong(6, user.getPhone_number());
 
 	            int result = ps.executeUpdate();
 
@@ -62,13 +63,14 @@ public class UserDAOIMP implements UserDAOINF {
 		            UserDTO user = new UserDTO();
 
 		            user.setUserId(rs.getInt("user_id"));
-		            user.setUserFname(rs.getString("user_fname"));
-		            user.setUserLname(rs.getString("user_lname"));
+		            user.setUser_fname(rs.getString("user_fname"));
+		            user.setUser_lname(rs.getString("user_lname"));
 		            user.setEmail(rs.getString("email"));
 		            user.setCity(rs.getString("city"));
 		            user.setBio(rs.getString("bio"));
-		            user.setCreateAt(rs.getTimestamp("create_at"));
+		            user.setCreate_at(rs.getTimestamp("create_at"));
 		            user.setPassword(rs.getString("password"));
+		            user.setPhone_number(rs.getLong("phone_number"));
 
 		            return user;
 		        }
@@ -96,13 +98,14 @@ public class UserDAOIMP implements UserDAOINF {
 		            UserDTO user = new UserDTO();
 
 		            user.setUserId(rs.getInt("user_id"));
-		            user.setUserFname(rs.getString("user_fname"));
-		            user.setUserLname(rs.getString("user_lname"));
+		            user.setUser_fname(rs.getString("user_fname"));
+		            user.setUser_lname(rs.getString("user_lname"));
 		            user.setEmail(rs.getString("email"));
 		            user.setCity(rs.getString("city"));
 		            user.setBio(rs.getString("bio"));
-		            user.setCreateAt(rs.getTimestamp("create_at"));
+		            user.setCreate_at(rs.getTimestamp("create_at"));
 		            user.setPassword(rs.getString("password"));
+		           
 
 		            return user;
 		        }
@@ -122,12 +125,12 @@ public class UserDAOIMP implements UserDAOINF {
 
 			PreparedStatement ps = con.prepareStatement(query);
 
-			ps.setString(1, user.getUserFname());
-			ps.setString(2, user.getUserLname());
+			ps.setString(1, user.getUser_fname());
+			ps.setString(2, user.getUser_fname());
 			ps.setString(3, user.getEmail());
 			ps.setString(4, user.getCity());
 			ps.setString(5, user.getBio());
-			ps.setTimestamp(6, user.getCreateAt());
+			ps.setTimestamp(6, user.getCreate_at());
 			ps.setString(7, user.getPassword());
 			ps.setInt(8, user.getUserId());
 

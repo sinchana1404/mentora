@@ -172,8 +172,18 @@
         <!-- Login Card -->
 
         <div class="login-card">
-
-            <form>
+        
+        <%String success=(String)request.getAttribute("success");%>
+        <%if(success!=null) {%>
+		<%= "Login Success"%>
+		<%} %>
+		
+		<%String Failure=(String)request.getAttribute("Failure"); %>
+		<%if(Failure!=null){ %>
+		<%="Login Fails " %>
+		<% } %>
+		
+            <form action="login" method="post">
 
                 <div class="mb-4">
 
@@ -186,6 +196,7 @@
                         </span>
 
                         <input type="email"
+                        		name="mail"
                             class="form-control"
                             placeholder="Enter your email">
 
@@ -204,6 +215,7 @@
                         </span>
 
                         <input type="password"
+                        		name="password"
                             class="form-control"
                             placeholder="Enter your password">
 
