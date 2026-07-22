@@ -12,5 +12,7 @@ public interface SkillDAOINF {
 	    boolean updateSkill(SkillDTO skill);
 
 	    boolean deleteSkill(int skillId);
+	    
+	    SkillDTO getSkillById(int skillId);
 
 	}

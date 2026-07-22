@@ -112,5 +112,34 @@ public class SkillDAOImpl implements SkillDAOINF {
 
 		return false;
 	}
+	@Override
+	public SkillDTO getSkillById(int skillId) {
+
+		SkillDTO skill = null;
+		String query = "SELECT * FROM skills where Skill_id = ?";
+
+		try {
+
+			PreparedStatement ps = con.prepareStatement(query);
+			ps.setInt(1, skillId);
+
+			ResultSet rs = ps.executeQuery();
+
+			while (rs.next()) {
+
+				
+				skill = new SkillDTO();
+				skill.setSkillId(rs.getInt("skill_id"));
+				skill.setSkillName(rs.getString("skill_name"));
+				skill.setDescriptionText(rs.getString("description_text"));
+
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return skill;
+	}
 
 }

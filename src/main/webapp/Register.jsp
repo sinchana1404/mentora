@@ -488,7 +488,7 @@ font-size:30px;
 
     <div class="back-home">
 
-        <a href="index.html">
+        <a href="LandingPage.jsp">
 
             <i class="fa fa-arrow-left"></i>
 

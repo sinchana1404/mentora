@@ -21,8 +21,7 @@ public class Login extends HttpServlet {
 		if(dto!=null) {
 			HttpSession session= req.getSession();
 			session.setAttribute("user", dto);
-			req.setAttribute("success", "login successful");
-			resp.sendRedirect("LandingPage");
+			resp.sendRedirect("DashBoard.jsp");
 		}
 		else {
 			req.setAttribute("failure", "login failed");

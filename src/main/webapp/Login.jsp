@@ -251,7 +251,7 @@
 
                         Don't have an account?
 
-                        <a href="Register.html" class="register-link">
+                        <a href="Register.jsp" class="register-link">
                             Register here
                         </a>
 
@@ -265,7 +265,7 @@
 
         <div class="mt-4">
 
-            <a href="index.html" class="back-link">
+            <a href="LandingPage.jsp" class="back-link">
                 ← Back to Home
             </a>
 

@@ -69,6 +69,7 @@ public class UserSkillDAOImpl implements UserSkillDAOINF {
 
 		    return list;
 		}
+	
 	@Override
 	public boolean deleteUserSkill(int userSkillId) {
 		String query = "DELETE FROM user_skills WHERE user_skill_id=?";

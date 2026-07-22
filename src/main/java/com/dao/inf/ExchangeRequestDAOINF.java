@@ -10,4 +10,6 @@ public interface ExchangeRequestDAOINF {
 	    boolean rejectRequest(int requestId);
 
 	    List<ExchangeRequestDTO> getAllRequests();
+	    
+	    List<ExchangeRequestDTO> getAllRequestsByStatus(String status);
 }

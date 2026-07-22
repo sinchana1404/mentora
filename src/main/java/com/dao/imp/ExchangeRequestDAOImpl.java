@@ -117,5 +117,38 @@ public class ExchangeRequestDAOImpl implements ExchangeRequestDAOINF {
 
 		return list;
 	}
+	@Override
+	public List<ExchangeRequestDTO> getAllRequestsByStatus(String status) {
+		List<ExchangeRequestDTO> list = new ArrayList<>();
+
+		String query = "SELECT * FROM exchange_requests where status = ?";
+
+		try {
+
+			PreparedStatement ps = con.prepareStatement(query);
+			ps.setString(1, status);
+
+			ResultSet rs = ps.executeQuery();
+
+			while (rs.next()) {
+				ExchangeRequestDTO request = new ExchangeRequestDTO();
+				request.setRequestId(rs.getInt("request_id"));
+				request.setSenderId(rs.getInt("sender_id"));
+				request.setReceiverId(rs.getInt("receiver_id"));
+				request.setOfferedSkillId(rs.getInt("offered_skill_id"));
+				request.setRequestedSkillId(rs.getInt("requested_skill_id"));
+				request.setMessage(rs.getString("message"));
+				request.setStatus(rs.getString("status"));
+				request.setRequestDate(rs.getTimestamp("request_date"));
+
+				list.add(request);
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return list;
+	}
 
 }
