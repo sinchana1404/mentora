@@ -4,9 +4,18 @@ public class UserSkillDTO {
 	private int userSkillId;
 	private int userId;
 	private int skillId;
+	private String proficiency;
 	
 	public UserSkillDTO() {
 		
+	}
+
+	public String getProficiency() {
+		return proficiency;
+	}
+
+	public void setProficiency(String proficiency) {
+		this.proficiency = proficiency;
 	}
 
 	public int getUserSkillId() {
@@ -35,7 +44,8 @@ public class UserSkillDTO {
 
 	@Override
 	public String toString() {
-		return "UserSkillDTO [userSkillId=" + userSkillId + ", userId=" + userId + ", skillId=" + skillId + "]";
+		return "UserSkillDTO [userSkillId=" + userSkillId + ", userId=" + userId + ", skillId=" + skillId
+				+ ", proficiency=" + proficiency + "]";
 	}
 	
 }

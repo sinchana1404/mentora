@@ -18,14 +18,14 @@ public class SkillDAOImpl implements SkillDAOINF {
 	}
 	@Override
 	public boolean addSkill(SkillDTO skill) {
-		String query = "INSERT INTO skills(skill_name, description_text) VALUES(?,?)";
+		String query = "INSERT INTO skills(skill_name, category) VALUES(?,?)";
 
 		try {
 
 			PreparedStatement ps = con.prepareStatement(query);
 
 			ps.setString(1, skill.getSkillName());
-			ps.setString(2, skill.getDescriptionText());
+			ps.setString(2, skill.getCategory());
 
 			int result = ps.executeUpdate();
 
@@ -57,7 +57,7 @@ public class SkillDAOImpl implements SkillDAOINF {
 
 				skill.setSkillId(rs.getInt("skill_id"));
 				skill.setSkillName(rs.getString("skill_name"));
-				skill.setDescriptionText(rs.getString("description_text"));
+				skill.setCategory(rs.getString("category"));
 
 				list.add(skill);
 			}
@@ -71,14 +71,14 @@ public class SkillDAOImpl implements SkillDAOINF {
 
 	@Override
 	public boolean updateSkill(SkillDTO skill) {
-		String query = "UPDATE skills SET skill_name=?, description_text=? WHERE skill_id=?";
+		String query = "UPDATE skills SET skill_name=?, category=? WHERE skill_id=?";
 
 		try {
 
 			PreparedStatement ps = con.prepareStatement(query);
 
 			ps.setString(1, skill.getSkillName());
-			ps.setString(2, skill.getDescriptionText());
+			ps.setString(2, skill.getCategory());
 			ps.setInt(3, skill.getSkillId());
 
 			int result = ps.executeUpdate();
@@ -131,7 +131,7 @@ public class SkillDAOImpl implements SkillDAOINF {
 				skill = new SkillDTO();
 				skill.setSkillId(rs.getInt("skill_id"));
 				skill.setSkillName(rs.getString("skill_name"));
-				skill.setDescriptionText(rs.getString("description_text"));
+				skill.setCategory(rs.getString("category"));
 
 			}
 

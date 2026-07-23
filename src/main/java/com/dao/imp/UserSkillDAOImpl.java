@@ -59,6 +59,7 @@ public class UserSkillDAOImpl implements UserSkillDAOINF {
 		            userSkill.setUserSkillId(rs.getInt("user_skill_id"));
 		            userSkill.setUserId(rs.getInt("user_id"));
 		            userSkill.setSkillId(rs.getInt("skill_id"));
+		            userSkill.setProficiency(rs.getString("proficiency"));
 
 		            list.add(userSkill);
 		        }
@@ -89,6 +90,38 @@ public class UserSkillDAOImpl implements UserSkillDAOINF {
 	    }
 
 	    return false;
+	}
+	@Override
+	public List<UserSkillDTO> getUserSkillsBySkillId(int skillId) {
+		 List<UserSkillDTO> list = new ArrayList<>();
+
+		    String query = "SELECT * FROM user_skills WHERE proficiency=?";
+
+		    try {
+
+		        PreparedStatement ps = con.prepareStatement(query);
+
+		        ps.setInt(1, skillId);
+
+		        ResultSet rs = ps.executeQuery();
+
+		        while (rs.next()) {
+
+		            UserSkillDTO userSkill = new UserSkillDTO();
+
+		            userSkill.setUserSkillId(rs.getInt("user_skill_id"));
+		            userSkill.setUserId(rs.getInt("user_id"));
+		            userSkill.setSkillId(rs.getInt("skill_id"));
+		            userSkill.setProficiency(rs.getString("proficiency"));
+
+		            list.add(userSkill);
+		        }
+
+		    } catch (SQLException e) {
+		        e.printStackTrace();
+		    }
+
+		    return list;
 	}
 
 }

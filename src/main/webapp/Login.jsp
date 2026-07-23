@@ -175,12 +175,12 @@
         
         <%String success=(String)request.getAttribute("success");%>
         <%if(success!=null) {%>
-		<%= "Login Success"%>
+		<%= success%>
 		<%} %>
 		
 		<%String Failure=(String)request.getAttribute("Failure"); %>
 		<%if(Failure!=null){ %>
-		<%="Login Fails " %>
+		<%=Failure %>
 		<% } %>
 		
             <form action="login" method="post">

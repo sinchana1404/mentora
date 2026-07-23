@@ -1,0 +1,535 @@
+@charset "UTF-8";
+/*=========================================
+            GLOBAL
+=========================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",sans-serif;
+}
+
+body{
+    background:#EEF4FF;
+    color:#17325C;
+}
+
+/*=========================================
+            CONTAINER
+=========================================*/
+
+.e_container{
+    display:flex;
+    height:100vh;
+    width: 100vw;
+    background:#EEF4FF;
+    overflow:hidden;
+}
+
+
+.sidebar{
+    width:260px;
+    background:#0D3B86;
+    color:white;
+    padding:30px 25px;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+
+}
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-bottom:50px;
+
+}
+
+.logo img{
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    border:3px solid white;
+
+    object-fit:cover;
+
+}
+
+.logo h2{
+
+    font-weight:700;
+
+}
+
+.sidebar ul{
+
+    list-style:none;
+
+    padding:0;
+
+}
+
+.sidebar li{
+
+    padding:15px 18px;
+
+    margin-bottom:12px;
+
+    border-radius:14px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    font-size:17px;
+
+}
+
+.sidebar li:hover{
+
+    background:rgba(255,255,255,.15);
+
+}
+
+.sidebar li.active{
+
+    background:white;
+
+    font-weight:600;
+         color:#0D3B86;
+   
+
+}
+
+.sidebar i{
+
+    font-size:20px;
+
+}
+
+
+.main{
+
+    flex:1;
+
+    width:100%;
+
+    padding:35px 40px;
+
+    overflow-y:auto;
+
+    background:#EEF4FF;
+
+}
+/*=========================================
+            PAGE HEADER
+=========================================*/
+
+.page-header{
+    margin-bottom:30px;
+}
+
+.page-header h2{
+    font-size:38px;
+    font-weight:700;
+    color:#17325C;
+    margin-bottom:8px;
+}
+
+.page-header p{
+    color:#6B7A90;
+    font-size:17px;
+}
+
+/*=========================================
+            FILTER CARD
+=========================================*/
+
+.filter-card{
+
+    background:#fff;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    margin-bottom:35px;
+
+    border:1px solid rgba(13,59,134,.05);
+
+    box-shadow:0 12px 30px rgba(13,59,134,.08);
+
+}
+
+/*=========================================
+            INPUTS
+=========================================*/
+
+.form-control,
+.form-select{
+
+    height:52px;
+
+    border-radius:12px;
+
+    background:#F9FBFF;
+
+    border:1px solid #D5E3FF;
+
+    transition:.3s;
+
+}
+
+.form-control:focus,
+.form-select:focus{
+
+    border-color:#2E7CF7;
+
+    box-shadow:0 0 0 .18rem rgba(46,124,247,.18);
+
+    background:#fff;
+
+}
+
+/*=========================================
+            SEARCH BUTTON
+=========================================*/
+
+.search-btn{
+
+    background:linear-gradient(135deg,#0D3B86,#2E7CF7);
+
+    color:white;
+
+    border:none;
+
+    border-radius:12px;
+
+    font-weight:600;
+
+    height:52px;
+
+}
+
+.search-btn:hover{
+
+    color:white;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 20px rgba(13,59,134,.20);
+
+}
+
+/*=========================================
+            PROFILE CARD
+=========================================*/
+
+.profile-card{
+
+    background:#fff;
+
+    border-radius:22px;
+
+    padding:30px;
+
+    margin-bottom:30px;
+
+    border:1px solid rgba(13,59,134,.05);
+
+    box-shadow:0 15px 35px rgba(13,59,134,.08);
+
+    transition:.3s;
+
+}
+
+.profile-card:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 18px 40px rgba(13,59,134,.15);
+
+}
+
+/*=========================================
+            PROFILE HEADER
+=========================================*/
+
+.profile-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.profile-info{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.avatar{
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:50%;
+
+    background:linear-gradient(135deg,#0D3B86,#2E7CF7);
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:24px;
+
+    font-weight:700;
+
+}
+
+.avatar.blue{
+
+    background:linear-gradient(135deg,#2563EB,#60A5FA);
+
+}
+
+.profile-info h4{
+
+    margin-bottom:5px;
+
+    color:#17325C;
+
+}
+
+.profile-info span{
+
+    color:#6B7A90;
+
+    font-size:15px;
+
+}
+
+/*=========================================
+            LEVEL BADGE
+=========================================*/
+
+.level-badge{
+
+    background:#EAF2FF;
+
+    color:#0D3B86;
+
+    padding:8px 18px;
+
+    border-radius:20px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+/*=========================================
+            SKILL BOX
+=========================================*/
+
+.skill-box{
+
+    background:#F8FBFF;
+
+    border:1px solid #E5EEFF;
+
+    border-radius:18px;
+
+    padding:20px;
+
+    height:100%;
+
+}
+
+.skill-box h6{
+
+    color:#0D3B86;
+
+    font-weight:600;
+
+    margin-bottom:18px;
+
+}
+
+/*=========================================
+            TAGS
+=========================================*/
+
+.tags{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+}
+
+.tags span{
+
+    background:#EAF2FF;
+
+    color:#0D3B86;
+
+    padding:8px 15px;
+
+    border-radius:30px;
+
+    font-size:14px;
+
+    font-weight:500;
+
+}
+
+/*=========================================
+            ACTION BUTTONS
+=========================================*/
+
+.actions{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:15px;
+
+    margin-top:30px;
+
+}
+
+.profile-btn{
+
+    border:1px solid #D5E3FF;
+
+    background:white;
+
+    color:#17325C;
+
+    border-radius:12px;
+
+    padding:10px 22px;
+
+    font-weight:600;
+
+}
+
+.profile-btn:hover{
+
+    background:#EEF4FF;
+
+}
+
+.request-btn{
+
+    background:linear-gradient(135deg,#0D3B86,#2E7CF7);
+
+    color:white;
+
+    border:none;
+
+    border-radius:12px;
+
+    padding:10px 22px;
+
+    font-weight:600;
+
+}
+
+.request-btn:hover{
+
+    color:white;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 20px rgba(13,59,134,.20);
+
+}
+
+/*=========================================
+            RESPONSIVE
+=========================================*/
+
+@media(max-width:768px){
+
+.page-header{
+
+text-align:center;
+
+}
+
+.page-header h2{
+
+font-size:30px;
+
+}
+
+.profile-top{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:20px;
+
+}
+
+.actions{
+
+flex-direction:column;
+
+}
+
+.actions .btn{
+
+width:100%;
+
+}
+
+.filter-card{
+
+padding:20px;
+
+}
+
+.profile-card{
+
+padding:20px;
+
+}
+
+}
+

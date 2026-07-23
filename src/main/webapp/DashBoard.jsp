@@ -1,6 +1,7 @@
 <%@page import="com.dao.imp.UserDAOIMP"%>
 <%@page import="com.dao.inf.UserDAOINF"%>
-<%@page import="jdk.internal.org.jline.terminal.TerminalBuilder.SystemOutput"%>
+<%@ page import="java.util.Comparator" %>
+<%@ page import="java.util.stream.Collectors" %>
 <%@page import="java.util.stream.Stream"%>
 <%@page import="java.util.Comparator"%>
 <%@page import="com.dto.ExchangeRequestDTO"%>
@@ -128,7 +129,7 @@ href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.m
 
             <button class="explore-btn">
 
-               <a href = "Explore.jsp">Expolre skills</a>
+               <a href = "Explore.jsp" style = "text-decoration: none; color:white;">Expolre skills</a>
 
             </button>
 
@@ -211,7 +212,7 @@ href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.m
 
                     <h3>My Skills</h3>
 
-                    <button class="small-btn"><a href = "#" style = "color:white">+ Add Skill</a></button>
+                    <button class="small-btn"><a href = "AddSkill.jsp" style = "color:white">+ Add Skill</a></button>
 
                 </div>
 
@@ -235,7 +236,7 @@ href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.m
 
                     <h3>Skills To Learn</h3>
 
-                    <button class="small-btn"><a href = "#" style = "color : white">+ Add Goal</a></button>
+                    <button class="small-btn"><a href = "AddGoal.jsp" style = "color : white">+ Add Goal</a></button>
 
                 </div>
 
@@ -263,7 +264,7 @@ href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.m
 
                     <h3>Recent Requests</h3>
 
-                    <a href="#">View All</a>
+                    <a href="Request.jsp">View All</a>
 
                 </div>
 
@@ -278,8 +279,7 @@ href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.m
                         <th>Status</th>
 
                     </tr>
-					<%@ page import="java.util.Comparator" %>
-<%@ page import="java.util.stream.Collectors" %>
+					
 
 <%
 List<ExchangeRequestDTO> exchangeList = exchange.getAllRequests();

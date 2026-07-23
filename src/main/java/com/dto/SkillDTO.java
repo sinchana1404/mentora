@@ -3,7 +3,7 @@ package com.dto;
 public class SkillDTO {
 	private int skillId;
 	private String skillName;
-	private String descriptionText;
+	private String category;
 	
 	public SkillDTO() {
 		
@@ -25,17 +25,17 @@ public class SkillDTO {
 		this.skillName = skillName;
 	}
 
-	public String getDescriptionText() {
-		return descriptionText;
+	public String getCategory() {
+		return category;
 	}
 
-	public void setDescriptionText(String descriptionText) {
-		this.descriptionText = descriptionText;
+	public void setCategory(String category) {
+		this.category = category;
 	}
 
 	@Override
 	public String toString() {
-		return "SkillDTO [skillId=" + skillId + ", skillName=" + skillName + ", descriptionText=" + descriptionText
+		return "SkillDTO [skillId=" + skillId + ", skillName=" + skillName + ", category=" + category
 				+ "]";
 	}
 	
