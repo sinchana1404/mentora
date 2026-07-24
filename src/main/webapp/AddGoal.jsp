@@ -15,202 +15,122 @@ pageEncoding="UTF-8"%>
 <link rel="stylesheet"
 href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-<link rel="stylesheet" href="addGoal.css">
+<link rel="stylesheet" href="AddGoals.css">
 
 </head>
 
 <body>
 
-<div class="container py-5">
+<div class = "e_container">
+<aside class="sidebar">
 
-    <!-- Page Header -->
+        <div class="logo">
 
-    <div class="page-header">
+            <img src="images/logo.jpeg">
 
-        <h2>Add Learning Goal</h2>
+            <h2>Mentora</h2>
 
-        <p>Tell the community what you'd like to learn.</p>
+        </div>
 
-    </div>
+        <ul>
 
-    <!-- Form Card -->
+            <li class="active">
 
-    <div class="goal-card">
+                <i class="bi bi-grid"></i>
 
-        <form action="AddGoalServlet" method="post">
+                <a href = "DashBoard.jsp" class = "sidebar_a" style = "text-decoration: none; color:#0D3B86;">Dashboard</a>
 
-            <!-- Goal Details -->
+            </li>
 
-            <h4 class="section-title">Learning Goal</h4>
+            <li>
 
-            <div class="row">
+                <i class="bi bi-search"></i>
 
-                <div class="col-md-6 mb-4">
+               <a href = "Explore.jsp" class = "sidebar_a" style = "text-decoration: none; color:white;">Explore Skills</a>
 
-                    <label class="form-label">Skill Name</label>
+            </li>
 
-                    <input type="text"
-                           class="form-control"
-                           name="skillName"
-                           placeholder="Enter Skill Name"
-                           required>
+            <li>
 
-                </div>
+                <i class="bi bi-send"></i>
+				 <a href = "Requests.jsp" class="sidebar_a" style = "text-decoration: none; color:white;">My Requests</a>
+           
+            </li>
 
-                <div class="col-md-6 mb-4">
+            <li>
 
-                    <label class="form-label">Category</label>
+                <i class="bi bi-person"></i>
 
-                    <select class="form-select" name="category">
+                 <a href = "Profile.jsp" class  = "sidebar_a" style = "text-decoration: none; color:white;">Profile</a>
 
-                        <option>Select Category</option>
+            </li>
 
-                        <option>Programming</option>
+            <li>
 
-                        <option>Web Development</option>
+                <i class="bi bi-box-arrow-right"></i>
 
-                        <option>Mobile Development</option>
+                 <a href = "Logout" class = "sidebar_a" style = "text-decoration: none; color:white;">Logout</a>
 
-                        <option>Database</option>
+            </li>
 
-                        <option>Cloud Computing</option>
+        </ul>
 
-                        <option>AI / Machine Learning</option>
+    </aside>
+    
+ 
 
-                        <option>UI / UX</option>
+<div class = "main">
+<div class="goal-box">
 
-                        <option>Communication</option>
+    <h2 class="title">Add Learning Goal</h2>
 
-                        <option>Languages</option>
+    <p class="subtitle">
+        Add a new skill you want to learn.
+    </p>
 
-                    </select>
+    <form action="AddGoalServlet" method="post">
 
-                </div>
+        <div class="mb-3">
 
-                <div class="col-md-6 mb-4">
+            <label class="form-label">Skill Name</label>
 
-                    <label class="form-label">Current Knowledge Level</label>
+            <input type="text"
+                   name="skillName"
+                   class="form-control"
+                   placeholder="Enter skill name"
+                   required>
 
-                    <select class="form-select" name="currentLevel">
+        </div>
 
-                        <option>Select Level</option>
+        <div class="mb-3">
 
-                        <option>Beginner</option>
+            <label class="form-label">Category</label>
 
-                        <option>Intermediate</option>
+            <input type="text"
+                   name="category"
+                   class="form-control"
+                   placeholder="Enter category"
+                   required>
 
-                        <option>Advanced</option>
+        </div>
 
-                    </select>
+  
+					<div class="d-flex justify-content-end">
 
-                </div>
+						<a href="DashBoard.jsp"
+							class="btn btn-outline-secondary btn-cancel me-3"> Cancel </a>
 
-                <div class="col-md-6 mb-4">
+						<button type="submit" class="btn btn-save">Add Goal</button>
 
-                    <label class="form-label">Preferred Learning Mode</label>
+					</div>
 
-                    <select class="form-select" name="mode">
-
-                        <option>Online</option>
-
-                        <option>Offline</option>
-
-                        <option>Both</option>
-
-                    </select>
-
-                </div>
-
-            </div>
-
-            <!-- Goal Description -->
-
-            <h4 class="section-title">Learning Details</h4>
-
-            <div class="mb-4">
-
-                <label class="form-label">Why do you want to learn this skill?</label>
-
-                <textarea class="form-control"
-                          rows="5"
-                          name="goalDescription"
-                          placeholder="Describe your learning objective..."></textarea>
-
-            </div>
-
-            <!-- Preferences -->
-
-            <h4 class="section-title">Preferences</h4>
-
-            <div class="row">
-
-                <div class="col-md-6 mb-4">
-
-                    <label class="form-label">Preferred Language</label>
-
-                    <select class="form-select" name="language">
-
-                        <option>English</option>
-
-                        <option>Kannada</option>
-
-                        <option>Hindi</option>
-
-                        <option>Tamil</option>
-
-                        <option>Telugu</option>
-
-                    </select>
-
-                </div>
-
-                <div class="col-md-6 mb-4">
-
-                    <label class="form-label">Target Completion</label>
-
-                    <select class="form-select" name="duration">
-
-                        <option>1 Month</option>
-
-                        <option>2 Months</option>
-
-                        <option>3 Months</option>
-
-                        <option>6 Months</option>
-
-                        <option>No Preference</option>
-
-                    </select>
-
-                </div>
-
-            </div>
-
-            <!-- Buttons -->
-
-            <div class="text-end mt-4">
-
-                <button type="reset" class="btn btn-light me-2">
-
-                    Clear
-
-                </button>
-
-                <button type="submit" class="btn save-btn">
-
-                    <i class="bi bi-bookmark-plus"></i>
-
-                    Save Goal
-
-                </button>
-
-            </div>
-
-        </form>
-
-    </div>
+    </form>
 
 </div>
+</div>
+</div>
+
+
 
 </body>
 </html>

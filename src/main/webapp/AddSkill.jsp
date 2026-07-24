@@ -1,219 +1,133 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Add Skill | Mentora</title>
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<title>Addskills</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+	rel="stylesheet">
 
 <link rel="stylesheet"
-href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-<link rel="stylesheet" href="addSkill.css">
-
+<link rel="stylesheet" href="AddSkill.css">
 </head>
-
 <body>
+	<div class="dashboard">
+		<aside class="sidebar">
 
-<div class="container py-5">
+			<div class="logo">
 
-    <!-- Page Heading -->
+				<img src="images/logo.jpeg">
 
-    <div class="page-header mb-4">
+				<h2>Mentora</h2>
 
-        <h2>Add Teaching Skill</h2>
+			</div>
 
-        <p>Share your expertise and help others learn.</p>
+			<ul>
 
-    </div>
+				<li class="active"><i class="bi bi-grid"></i> <a
+					href="DashBoard.jsp" class="sidebar_a"
+					style="text-decoration: none; color: #0D3B86;">Dashboard</a></li>
 
-    <!-- Form Card -->
+				<li><i class="bi bi-search"></i> <a href="Explore.jsp"
+					class="sidebar_a" style="text-decoration: none; color: white;">Explore
+						Skills</a></li>
 
-    <div class="skill-card">
+				<li><i class="bi bi-send"></i> <a href="Requests.jsp"
+					class="sidebar_a" style="text-decoration: none; color: white;">My
+						Requests</a></li>
 
-        <form action="AddSkillServlet" method="post">
+				<li><i class="bi bi-person"></i> <a href="Profile.jsp"
+					class="sidebar_a" style="text-decoration: none; color: white;">Profile</a>
 
-            <!-- Skill Details -->
+				</li>
 
-            <h4 class="section-title">Skill Details</h4>
+				<li><i class="bi bi-box-arrow-right"></i> <a href="Logout"
+					class="sidebar_a" style="text-decoration: none; color: white;">Logout</a>
 
-            <div class="row">
+				</li>
 
-                <div class="col-md-6 mb-4">
+			</ul>
 
-                    <label class="form-label">Skill Name</label>
+		</aside>
+		<div class="container">
 
-                    <input type="text"
-                           class="form-control"
-                           name="skillName"
-                           placeholder="Enter Skill Name"
-                           required>
+			<div class="skill-box">
 
-                </div>
+				<h2 class="title">Add New Skill</h2>
 
-                <div class="col-md-6 mb-4">
+				<p class="subtitle">Share your expertise with the Mentora
+					community.</p>
 
-                    <label class="form-label">Category</label>
+				<form action="AddSkillServlet" method="post">
 
-                    <select class="form-select" name="category">
+					<div class="mb-4">
 
-                        <option>Select Category</option>
+						<label class="form-label"> Skill Name </label> <input type="text"
+							name="skillName" class="form-control"
+							placeholder="Enter skill name" required>
 
-                        <option>Programming</option>
+					</div>
 
-                        <option>Web Development</option>
+					<div class="mb-4">
 
-                        <option>Mobile Development</option>
+						<label class="form-label"> Category </label> 
+						<input type="text"
+							name="category" class="form-control"
+							placeholder="Enter category " required>
+						
 
-                        <option>Database</option>
+					</div>
 
-                        <option>Cloud Computing</option>
+					<div class="mb-5">
 
-                        <option>AI / Machine Learning</option>
+						<label class="form-label"> Proficiency </label>
 
-                        <option>UI / UX</option>
+						<div class="level">
 
-                        <option>Communication</option>
+							<div class="form-check">
+								<input class="form-check-input" type="radio" name="proficiency"
+									value="Beginner" required> <label
+									class="form-check-label"> Beginner </label>
+							</div>
 
-                        <option>Languages</option>
+							<div class="form-check">
+								<input class="form-check-input" type="radio" name="proficiency"
+									value="Intermediate"> <label class="form-check-label">
+									Intermediate </label>
+							</div>
 
-                    </select>
+							<div class="form-check">
+								<input class="form-check-input" type="radio" name="proficiency"
+									value="Advanced"> <label class="form-check-label">
+									Advanced </label>
+							</div>
 
-                </div>
+						</div>
 
-                <div class="col-md-6 mb-4">
+					</div>
 
-                    <label class="form-label">Experience Level</label>
+					<div class="d-flex justify-content-end">
 
-                    <select class="form-select" name="experience">
+						<a href="DashBoard.jsp"
+							class="btn btn-outline-secondary btn-cancel me-3"> Cancel </a>
 
-                        <option>Select Experience</option>
+						<button type="submit" class="btn btn-save">Add Skill</button>
 
-                        <option>Beginner</option>
+					</div>
 
-                        <option>Intermediate</option>
 
-                        <option>Advanced</option>
 
-                        <option>Expert</option>
+				</form>
 
-                    </select>
+			</div>
 
-                </div>
+		</div>
+	</div>
 
-                <div class="col-md-6 mb-4">
-
-                    <label class="form-label">Availability</label>
-
-                    <select class="form-select" name="availability">
-
-                        <option>Select Availability</option>
-
-                        <option>Weekdays</option>
-
-                        <option>Weekends</option>
-
-                        <option>Both</option>
-
-                    </select>
-
-                </div>
-
-            </div>
-
-            <!-- Description -->
-
-            <h4 class="section-title mt-2">Skill Description</h4>
-
-            <div class="mb-4">
-
-                <label class="form-label">Description</label>
-
-                <textarea class="form-control"
-                          rows="5"
-                          name="description"
-                          placeholder="Describe what you can teach..."></textarea>
-
-            </div>
-
-            <!-- Preferred Mode -->
-
-            <h4 class="section-title mt-2">Teaching Preference</h4>
-
-            <div class="row">
-
-                <div class="col-md-6 mb-4">
-
-                    <label class="form-label">Mode</label>
-
-                    <select class="form-select" name="mode">
-
-                        <option>Online</option>
-
-                        <option>Offline</option>
-
-                        <option>Both</option>
-
-                    </select>
-
-                </div>
-
-                <div class="col-md-6 mb-4">
-
-                    <label class="form-label">Preferred Language</label>
-
-                    <select class="form-select" name="language">
-
-                        <option>English</option>
-
-                        <option>Kannada</option>
-
-                        <option>Hindi</option>
-
-                        <option>Tamil</option>
-
-                        <option>Telugu</option>
-
-                    </select>
-
-                </div>
-
-            </div>
-
-            <!-- Buttons -->
-
-            <div class="text-end mt-4">
-
-                <button type="reset"
-                        class="btn btn-light me-2">
-
-                    Clear
-
-                </button>
-
-                <button type="submit"
-                        class="btn save-btn">
-
-                    <i class="bi bi-plus-circle"></i>
-
-                    Save Skill
-
-                </button>
-
-            </div>
-
-        </form>
-
-    </div>
-
-</div>
 
 </body>
 </html>

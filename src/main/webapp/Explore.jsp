@@ -225,28 +225,18 @@ href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.m
 
         <div class="actions">
 
-            <button class="btn profile-btn">
-
-                <i class="bi bi-person"></i>
-
-                View Profile
-
-            </button>
 
             <button class="btn request-btn">
 
                 <i class="bi bi-send"></i>
 
-                Send Request
+               <a href = "SendRequest.jsp" style = "color : white; text-decoration :none;"> Send Request</a>
 
             </button>
 
         </div>
 
     </div>
-
-    <!-- Card 2 -->
-
    
 </div>
 

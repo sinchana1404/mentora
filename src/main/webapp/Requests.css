@@ -1,0 +1,461 @@
+@charset "UTF-8";
+
+/*=========================================
+            GLOBAL
+=========================================*/
+
+body{
+    background:#EEF4FF;
+    color:#17325C;
+    
+}
+
+.e_container{
+	background:#EEF4FF;
+    color:#17325C;
+    display : flex;
+    overflow: hidden;
+}
+
+
+
+
+.sidebar{
+    width:260px;
+    background:#0D3B86;
+    color:white;
+    padding:30px 25px;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    height : 100vh;
+
+}
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-bottom:50px;
+
+}
+
+.logo img{
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    border:3px solid white;
+
+    object-fit:cover;
+
+}
+
+.logo h2{
+
+    font-weight:700;
+
+}
+
+.sidebar ul{
+
+    list-style:none;
+
+    padding:0;
+
+}
+
+.sidebar li{
+
+    padding:15px 18px;
+
+    margin-bottom:12px;
+
+    border-radius:14px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    font-size:17px;
+
+}
+
+.sidebar li:hover{
+
+    background:rgba(255,255,255,.15);
+
+}
+
+.sidebar li.active{
+
+    background:white;
+
+    font-weight:600;
+         color:#0D3B86;
+   
+
+}
+
+.sidebar i{
+
+    font-size:20px;
+
+}
+
+.main{
+    flex:1;
+    padding:35px 40px;
+    overflow-y:auto;
+    background:#EEF4FF;
+}
+
+/*=========================================
+            PAGE HEADER
+=========================================*/
+
+.page-header{
+    margin-bottom:30px;
+}
+
+.page-header h2{
+    font-size:36px;
+    font-weight:700;
+    color:#17325C;
+}
+
+.page-header p{
+    color:#6B7A90;
+    margin-top:6px;
+}
+
+/*=========================================
+            TABS
+=========================================*/
+
+.request-tabs .nav-link{
+
+    border-radius:12px;
+    padding:12px 25px;
+    color:#0D3B86;
+    font-weight:600;
+    border:1px solid #D5E3FF;
+    background:#fff;
+    transition:.3s;
+
+}
+
+.request-tabs .nav-link.active{
+
+    background:linear-gradient(135deg,#0D3B86,#2E7CF7);
+    color:#fff;
+    border:none;
+
+}
+
+/*=========================================
+            REQUEST CARD
+=========================================*/
+
+.request-card{
+
+    background:#fff;
+    border-radius:22px;
+    padding:28px;
+    margin-bottom:30px;
+    border:1px solid rgba(13,59,134,.08);
+    box-shadow:0 12px 30px rgba(13,59,134,.08);
+    transition:.3s;
+
+}
+
+.request-card:hover{
+
+    transform:translateY(-4px);
+    box-shadow:0 18px 40px rgba(13,59,134,.15);
+
+}
+
+/*=========================================
+            HEADER
+=========================================*/
+
+.request-header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+}
+
+.user-info{
+
+    display:flex;
+    align-items:center;
+    gap:18px;
+
+}
+
+.avatar{
+
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#0D3B86,#2E7CF7);
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:24px;
+    font-weight:700;
+
+}
+
+.avatar.blue{
+
+    background:linear-gradient(135deg,#2563EB,#60A5FA);
+
+}
+
+.user-info h5{
+
+    margin-bottom:5px;
+    color:#17325C;
+
+}
+
+.user-info p{
+
+    margin:0;
+    color:#6B7A90;
+
+}
+
+/*=========================================
+            STATUS
+=========================================*/
+
+.status{
+
+    padding:8px 18px;
+    border-radius:20px;
+    font-size:14px;
+    font-weight:600;
+
+}
+
+.pending{
+
+    background:#FFF4D6;
+    color:#D48806;
+
+}
+
+.accepted{
+
+    background:#E8F7EC;
+    color:#2E8B57;
+
+}
+
+.rejected{
+
+    background:#FDEAEA;
+    color:#D93025;
+
+}
+
+/*=========================================
+            SKILL BOX
+=========================================*/
+
+.skill-box{
+
+    background:#F8FBFF;
+    border:1px solid #E5EEFF;
+    border-radius:18px;
+    padding:20px;
+    height:100%;
+
+}
+
+.skill-box h6{
+
+    color:#0D3B86;
+    font-weight:600;
+    margin-bottom:18px;
+
+}
+
+/*=========================================
+            TAGS
+=========================================*/
+
+.tags{
+
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+
+}
+
+.tags span{
+
+    background:#EAF2FF;
+    color:#0D3B86;
+    padding:8px 15px;
+    border-radius:25px;
+    font-size:14px;
+    font-weight:500;
+
+}
+
+/*=========================================
+            FOOTER
+=========================================*/
+
+.request-footer{
+
+    margin-top:25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+}
+
+.request-footer small{
+
+    color:#6B7A90;
+}
+
+/*=========================================
+            BUTTONS
+=========================================*/
+
+.actions{
+
+    display:flex;
+    gap:12px;
+
+}
+
+.profile-btn{
+
+    border:1px solid #D5E3FF;
+    background:#fff;
+    color:#17325C;
+    border-radius:12px;
+    padding:10px 20px;
+    font-weight:600;
+
+}
+
+.profile-btn:hover{
+
+    background:#EEF4FF;
+
+}
+
+.accept-btn{
+
+    background:#28A745;
+    color:#fff;
+    border:none;
+    border-radius:12px;
+    padding:10px 20px;
+    font-weight:600;
+
+}
+
+.accept-btn:hover{
+
+    background:#218838;
+    color:#fff;
+
+}
+
+.decline-btn{
+
+    background:#DC3545;
+    color:#fff;
+    border:none;
+    border-radius:12px;
+    padding:10px 20px;
+    font-weight:600;
+
+}
+
+.decline-btn:hover{
+
+    background:#C82333;
+    color:#fff;
+
+}
+
+.cancel-btn{
+
+    background:#FFC107;
+    color:#17325C;
+    border:none;
+    border-radius:12px;
+    padding:10px 20px;
+    font-weight:600;
+
+}
+
+.cancel-btn:hover{
+
+    background:#E0A800;
+    color:#17325C;
+
+}
+
+/*=========================================
+            RESPONSIVE
+=========================================*/
+
+@media(max-width:768px){
+
+    .request-header{
+
+        flex-direction:column;
+        align-items:flex-start;
+        gap:20px;
+
+    }
+
+    .request-footer{
+
+        flex-direction:column;
+        align-items:flex-start;
+        gap:20px;
+
+    }
+
+    .actions{
+
+        width:100%;
+        flex-direction:column;
+
+    }
+
+    .actions button{
+
+        width:100%;
+
+    }
+
+}

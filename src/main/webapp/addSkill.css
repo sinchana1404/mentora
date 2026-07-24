@@ -1,279 +1,246 @@
 @charset "UTF-8";
 
-/*=========================================
-            GLOBAL
-=========================================*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:"Segoe UI",sans-serif;
+    font-family:'Poppins',sans-serif;
 }
 
 body{
-    background:#EEF4FF;
-    color:#17325C;
+    background:#f5f7fb;
 }
 
-/*=========================================
-            CONTAINER
-=========================================*/
+/* Dashboard Layout */
+
+.dashboard{
+    display:flex;
+    min-height:100vh;
+}
+
+/* Sidebar */
+
+.sidebar{
+    width:260px;
+    background:#0D3B86;
+    color:white;
+    padding:25px 20px;
+    position:fixed;
+    height:100vh;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:40px;
+}
+
+.logo img{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.logo h2{
+    font-size:24px;
+    font-weight:600;
+    margin:0;
+    color:white;
+}
+
+.sidebar ul{
+    list-style:none;
+    padding:0;
+}
+
+.sidebar li{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:14px 16px;
+    border-radius:12px;
+    margin-bottom:10px;
+    transition:.3s;
+    cursor:pointer;
+}
+
+.sidebar li i{
+    font-size:18px;
+}
+
+.sidebar li:hover{
+    background:rgba(255,255,255,.15);
+}
+
+.sidebar li.active{
+    background:white;
+}
+
+.sidebar li.active i{
+    color:#0D3B86;
+}
+
+.sidebar_a{
+    color:white;
+    font-size:15px;
+    font-weight:500;
+}
+
+.sidebar li.active .sidebar_a{
+    color:#0D3B86 !important;
+}
+
+/* Main Container */
 
 .container{
-    max-width:1000px;
+    margin-left:280px;
+    width:100%;
+    padding:45px;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
 }
 
-/*=========================================
-            PAGE HEADER
-=========================================*/
+/* Card */
 
-.page-header{
-    margin-bottom:30px;
+.skill-box{
+    width:100%;
+    max-width:700px;
+    background:#fff;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
 }
 
-.page-header h2{
-    font-size:38px;
+.title{
+    color:#0D3B86;
+    font-size:30px;
     font-weight:700;
-    color:#17325C;
     margin-bottom:8px;
 }
 
-.page-header p{
-    color:#6B7A90;
-    font-size:17px;
+.subtitle{
+    color:#6c757d;
+    margin-bottom:35px;
 }
 
-/*=========================================
-            CARD
-=========================================*/
-
-.skill-card{
-
-    background:#fff;
-
-    border-radius:22px;
-
-    padding:40px;
-
-    box-shadow:0 15px 35px rgba(13,59,134,.08);
-
-    border:1px solid rgba(13,59,134,.05);
-
-}
-
-/*=========================================
-            SECTION TITLE
-=========================================*/
-
-.section-title{
-
-    font-size:22px;
-
-    font-weight:600;
-
-    color:#0D3B86;
-
-    margin-bottom:25px;
-
-    padding-bottom:10px;
-
-    border-bottom:2px solid #E5EEFF;
-
-}
-
-/*=========================================
-            LABELS
-=========================================*/
+/* Form */
 
 .form-label{
-
     font-weight:600;
-
-    color:#17325C;
-
+    color:#333;
     margin-bottom:8px;
-
 }
-
-/*=========================================
-            INPUTS
-=========================================*/
 
 .form-control,
 .form-select{
-
-    height:52px;
-
     border-radius:12px;
-
-    border:1px solid #D5E3FF;
-
-    background:#F9FBFF;
-
-    font-size:15px;
-
+    padding:12px 15px;
+    border:1px solid #d6d6d6;
     transition:.3s;
-
 }
 
 .form-control:focus,
 .form-select:focus{
-
-    border-color:#2E7CF7;
-
-    box-shadow:0 0 0 .18rem rgba(46,124,247,.18);
-
-    background:#fff;
-
+    border-color:#0D3B86;
+    box-shadow:0 0 0 .2rem rgba(13,59,134,.15);
 }
 
-textarea.form-control{
+/* Radio Buttons */
 
-    min-height:140px;
-
-    resize:vertical;
-
-    padding-top:15px;
-
+.level{
+    display:flex;
+    gap:35px;
+    margin-top:10px;
 }
 
-/*=========================================
-            BUTTONS
-=========================================*/
-
-.save-btn{
-
-    background:linear-gradient(135deg,#0D3B86,#2E7CF7);
-
-    color:white;
-
-    border:none;
-
-    padding:12px 30px;
-
+.form-check{
+    padding:12px 18px;
+    border:1px solid #dee2e6;
     border-radius:12px;
-
-    font-weight:600;
-
-    transition:.35s;
-
+    transition:.3s;
 }
 
-.save-btn:hover{
+.form-check:hover{
+    background:#f5f9ff;
+    border-color:#0D3B86;
+}
 
-    transform:translateY(-2px);
+.form-check-input:checked{
+    background-color:#0D3B86;
+    border-color:#0D3B86;
+}
 
-    box-shadow:0 10px 25px rgba(13,59,134,.25);
+.form-check-label{
+    margin-left:6px;
+    cursor:pointer;
+}
 
+/* Buttons */
+
+.btn-save{
+    background:#0D3B86;
     color:white;
-
-}
-
-.btn-light{
-
-    background:#fff;
-
-    border:1px solid #D5E3FF;
-
-    padding:12px 28px;
-
-    border-radius:12px;
-
+    padding:10px 28px;
+    border-radius:10px;
     font-weight:600;
-
+    transition:.3s;
 }
 
-.btn-light:hover{
-
-    background:#EEF4FF;
-
+.btn-save:hover{
+    background:#0a2f69;
+    color:white;
 }
 
-/*=========================================
-            PLACEHOLDER
-=========================================*/
-
-::placeholder{
-
-    color:#9AA7BD;
-
+.btn-cancel{
+    border-radius:10px;
+    padding:10px 28px;
+    font-weight:600;
 }
 
-/*=========================================
-            SPACING
-=========================================*/
-
-.mb-4{
-
-    margin-bottom:1.5rem!important;
-
-}
-
-/*=========================================
-            RESPONSIVE
-=========================================*/
+/* Responsive */
 
 @media(max-width:992px){
 
-.skill-card{
+    .sidebar{
+        width:220px;
+    }
 
-padding:30px;
-
-}
-
-.page-header h2{
-
-font-size:32px;
-
-}
+    .container{
+        margin-left:220px;
+        padding:25px;
+    }
 
 }
 
 @media(max-width:768px){
 
-.container{
+    .dashboard{
+        flex-direction:column;
+    }
 
-padding:20px;
+    .sidebar{
+        position:relative;
+        width:100%;
+        height:auto;
+    }
 
-}
+    .container{
+        margin-left:0;
+        padding:20px;
+    }
 
-.skill-card{
+    .skill-box{
+        padding:25px;
+    }
 
-padding:25px;
-
-}
-
-.page-header{
-
-text-align:center;
-
-}
-
-.page-header h2{
-
-font-size:28px;
-
-}
-
-.page-header p{
-
-font-size:15px;
-
-}
-
-.text-end{
-
-text-align:center!important;
-
-}
-
-.btn{
-
-width:100%;
-
-margin-bottom:10px;
-
-}
+    .level{
+        flex-direction:column;
+        gap:15px;
+    }
 
 }
