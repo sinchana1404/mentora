@@ -43,22 +43,10 @@ public class Explore extends HttpServlet {
             return;
         }
 
+        System.out.println(users);
         req.setAttribute("users", users);
 
         req.getRequestDispatcher("Explore.jsp").forward(req, resp);
     }
 
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
-
-        UserDAOINF udao = new UserDAOIMP();
-
-        
-        List<UserDTO> users = udao.getAllUsers();
-
-        req.setAttribute("users", users);
-
-        req.getRequestDispatcher("Explore.jsp").forward(req, resp);
-    }
 }

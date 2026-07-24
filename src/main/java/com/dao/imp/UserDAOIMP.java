@@ -195,7 +195,7 @@ public class UserDAOIMP implements UserDAOINF {
 	            dto.setUserId(rs.getInt("user_id"));;
 	            dto.setUser_fname(rs.getString("user_fname"));
 	            dto.setUser_lname(rs.getString("user_lname"));
-	            dto.setEmail(rs.getString("user_email"));;
+	            dto.setEmail(rs.getString("email"));;
 	            dto.setPhone_number(rs.getLong("phone_number"));
 
 	            list.add(dto);
@@ -235,7 +235,7 @@ public class UserDAOIMP implements UserDAOINF {
 	            dto.setUserId(rs.getInt("user_id"));;
 	            dto.setUser_fname(rs.getString("user_fname"));
 	            dto.setUser_lname(rs.getString("user_lname"));
-	            dto.setEmail(rs.getString("user_email"));;
+	            dto.setEmail(rs.getString("email"));;
 	            dto.setPhone_number(rs.getLong("phone_number"));
 
 
