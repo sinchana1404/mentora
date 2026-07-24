@@ -25,7 +25,7 @@ public class Login extends HttpServlet {
 		}
 		else {
 			req.setAttribute("failure", "login failed");
-			req.getRequestDispatcher("login.jsp").forward(req, resp);
+			req.getRequestDispatcher("Login.jsp").forward(req, resp);
 		}
 		
 		

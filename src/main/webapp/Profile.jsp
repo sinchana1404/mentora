@@ -290,7 +290,7 @@ request.getRequestDispatcher("Login.jsp").forward(request,response);%>
 
         <div class="button-area">
 
-            <a href="EditProfile.jsp" class="btn btn-primary">
+            <a href="update.jsp" class="btn btn-primary">
 
                 <i class="bi bi-pencil-square"></i>
 

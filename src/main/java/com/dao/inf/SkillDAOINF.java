@@ -14,5 +14,7 @@ public interface SkillDAOINF {
 	    boolean deleteSkill(int skillId);
 	    
 	    SkillDTO getSkillById(int skillId);
+	    
+	    SkillDTO getSkillByName(String skillName);
 
 	}

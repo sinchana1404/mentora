@@ -1,5 +1,7 @@
 package com.dao.inf;
 
+import java.util.List;
+
 import com.dto.UserDTO;
 
 public interface UserDAOINF {
@@ -12,6 +14,11 @@ public interface UserDAOINF {
 	    boolean updateUser(UserDTO user);
 
 	    boolean deleteUser(int userId);
+	    
+	    List<UserDTO> getAllUsers();
 
+	    List<UserDTO> searchUsersBySkill(String skillName, String proficiency);
+
+	    List<UserDTO> searchUsersByCategory(String category, String proficiency);
 	}
 

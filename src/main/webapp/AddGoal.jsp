@@ -88,7 +88,7 @@ href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.m
         Add a new skill you want to learn.
     </p>
 
-    <form action="AddGoalServlet" method="post">
+    <form action="AddGoal" method="post">
 
         <div class="mb-3">
 

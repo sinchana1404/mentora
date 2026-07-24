@@ -1,3 +1,16 @@
+<%@page import="java.util.stream.Collectors"%>
+<%@page import="com.dto.LearningInterestDTO"%>
+<%@page import="com.dao.imp.LearningInterestDAOImpl"%>
+<%@page import="com.dao.inf.LearningInterestDAOINF"%>
+<%@page import="com.dao.imp.UserSkillDAOImpl"%>
+<%@page import="com.dao.inf.UserSkillDAOINF"%>
+<%@page import="com.dao.imp.SkillDAOImpl"%>
+<%@page import="com.dao.inf.SkillDAOINF"%>
+<%@page import="com.dao.imp.UserDAOIMP"%>
+<%@page import="com.dao.inf.UserDAOINF"%>
+<%@page import="com.dto.UserDTO"%>
+<%@page import="java.util.List"%>
+<%@page import="com.dto.UserSkillDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
 
@@ -122,11 +135,11 @@ href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.m
 
                 <select class="form-select" name = "prof">
 
-                    <option value = "begginer">Beginner</option>
+                    <option value = "Beginner">Beginner</option>
 
-                    <option value = "intermediate">Intermediate</option>
+                    <option value = "Intermediate">Intermediate</option>
 
-                    <option value = "advanced">Advanced</option>
+                    <option value = "Advanced">Advanced</option>
 
                 </select>
 
@@ -150,8 +163,20 @@ href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.m
   
   </form>
     <!-- Profile Card -->
+<% UserDAOINF udao = new UserDAOIMP();
+   SkillDAOINF sdao = new SkillDAOImpl();
+   UserSkillDAOINF usdao = new UserSkillDAOImpl();
+   LearningInterestDAOINF ldao = new LearningInterestDAOImpl();
+%>
+<%
+List<UserDTO> users = (List<UserDTO>) request.getAttribute("users");
 
-    <div class="profile-card">
+if(users == null){
+    users = udao.getAllUsers();
+}
+%>
+<%for(UserDTO us : users) {%>
+ <div class="profile-card">
 
         <div class="profile-top">
 
@@ -159,21 +184,25 @@ href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.m
 
                 <div class="avatar">
 
-                    R
+                   <%= us.getUser_fname().toUpperCase().charAt(0) %>
 
                 </div>
 
                 <div>
 
-                    <h4>Rahul Kumar</h4>
-
-                    <span>Java Full Stack Developer</span>
+<h4 style="text-transform:capitalize"> <%= us.getUser_fname() %> <%= us.getUser_lname() %></h4>
 
                 </div>
 
             </div>
 
-            <span class="level-badge">Advanced</span>
+          <%
+List<UserSkillDTO> skillList = usdao.getUserSkills(us.getUserId());
+%>
+
+<span class="level-badge">
+    <%= skillList.isEmpty() ? "" : skillList.get(0).getProficiency() %>
+</span>
 
         </div>
 
@@ -183,18 +212,13 @@ href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.m
 
                 <div class="skill-box">
 
-                    <h6>Can Teach</h6>
+                  <h6>Can Teach</h6>
 
                     <div class="tags">
 
-                        <span>Java</span>
-
-                        <span>Spring Boot</span>
-
-                        <span>JSP</span>
-
-                        <span>Hibernate</span>
-
+                       <% for(UserSkillDTO uskill : skillList) {%>
+							 <span><%= sdao.getSkillById(uskill.getSkillId()).getSkillName() %></span>
+						<%} %>
                     </div>
 
                 </div>
@@ -205,15 +229,14 @@ href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.m
 
                 <div class="skill-box">
 
+				<%List<LearningInterestDTO> learnList = ldao.getLearningInterests(us.getUserId()); %>
                     <h6>Wants To Learn</h6>
 
                     <div class="tags">
 
-                        <span>React</span>
-
-                        <span>Angular</span>
-
-                        <span>Node.js</span>
+                        <% for(LearningInterestDTO lSkill : learnList){ %>
+							<span><%= sdao.getSkillById(lSkill.getSkillId()).getSkillName() %></span>
+                        <%} %>
 
                     </div>
 
@@ -238,6 +261,9 @@ href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.m
 
     </div>
    
+
+<%} %>
+
 </div>
 
 </body>

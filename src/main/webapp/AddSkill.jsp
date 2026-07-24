@@ -62,7 +62,7 @@
 				<p class="subtitle">Share your expertise with the Mentora
 					community.</p>
 
-				<form action="AddSkillServlet" method="post">
+				<form action="AddSkill" method="post">
 
 					<div class="mb-4">
 

@@ -12,5 +12,7 @@ public interface UserSkillDAOINF {
 	    boolean deleteUserSkill(int userSkillId);
 	    
 	    List<UserSkillDTO> getUserSkillsBySkillId(int skillId);
+	    
+	    List<UserSkillDTO> getAllUserSkill();
 
 }

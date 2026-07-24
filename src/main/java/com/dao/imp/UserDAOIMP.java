@@ -3,6 +3,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
 import com.dao.inf.UserDAOINF;
 import com.dto.UserDTO;
 import com.utility.DBconnection;
@@ -16,7 +19,7 @@ public class UserDAOIMP implements UserDAOINF {
 		@Override
 		public boolean registerUser(UserDTO user) {
 
-	        String query = "INSERT INTO users(user_fname,user_lname,email,bio,password,phone_number) VALUES(?,?,?,?,?,?)";
+	        String query = "INSERT INTO users(user_fname,user_lname,email,bio,password,phone_number,create_at) VALUES(?,?,?,?,?,?,now()";
 
 	        try {
 
@@ -168,5 +171,114 @@ public class UserDAOIMP implements UserDAOINF {
 
 		return false;
 	}
+	
+	@Override
+	public List<UserDTO> searchUsersBySkill(String skillName, String proficiency) {
+
+	    List<UserDTO> list = new ArrayList();
+
+	    String query = "SELECT DISTINCT u.* FROM users u JOIN user_skills us ON u.user_id = us.user_id JOIN skills s ON us.skill_id = s.skill_id WHERE s.skill_name = ? AND us.proficiency = ?";
+
+	    try {
+
+	        PreparedStatement ps = con.prepareStatement(query);
+
+	        ps.setString(1, skillName);
+	        ps.setString(2, proficiency);
+
+	        ResultSet rs = ps.executeQuery();
+
+	        while(rs.next()){
+
+	            UserDTO dto = new UserDTO();
+
+	            dto.setUserId(rs.getInt("user_id"));;
+	            dto.setUser_fname(rs.getString("user_fname"));
+	            dto.setUser_lname(rs.getString("user_lname"));
+	            dto.setEmail(rs.getString("user_email"));;
+	            dto.setPhone_number(rs.getLong("phone_number"));
+
+	            list.add(dto);
+	        }
+
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+
+	    return list;
+	}
+	
+	@Override
+	public List<UserDTO> searchUsersByCategory(String category, String proficiency) {
+
+	    List<UserDTO> list = new ArrayList<>();
+
+	    String query = "SELECT DISTINCT u.* " +
+	                   "FROM users u " +
+	                   "JOIN user_skills us ON u.user_id = us.user_id " +
+	                   "JOIN skills s ON us.skill_id = s.skill_id " +
+	                   "WHERE s.category = ? AND us.proficiency = ?";
+
+	    try {
+
+	        PreparedStatement ps = con.prepareStatement(query);
+
+	        ps.setString(1, category);
+	        ps.setString(2, proficiency);
+
+	        ResultSet rs = ps.executeQuery();
+
+	        while(rs.next()){
+
+	            UserDTO dto = new UserDTO();
+
+	            dto.setUserId(rs.getInt("user_id"));;
+	            dto.setUser_fname(rs.getString("user_fname"));
+	            dto.setUser_lname(rs.getString("user_lname"));
+	            dto.setEmail(rs.getString("user_email"));;
+	            dto.setPhone_number(rs.getLong("phone_number"));
+
+
+	            list.add(dto);
+	        }
+
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+
+	    return list;
+	}
+	@Override
+	public List<UserDTO> getAllUsers() {
+		List<UserDTO> list = new ArrayList();
+
+	    String query = "SELECT DISTINCT* FROM users ";
+
+	    try {
+
+	        PreparedStatement ps = con.prepareStatement(query);
+
+	        ResultSet rs = ps.executeQuery();
+
+	        while(rs.next()){
+
+	            UserDTO dto = new UserDTO();
+
+	            dto.setUserId(rs.getInt("user_id"));;
+	            dto.setUser_fname(rs.getString("user_fname"));
+	            dto.setUser_lname(rs.getString("user_lname"));
+	            dto.setEmail(rs.getString("user_email"));;
+	            dto.setPhone_number(rs.getLong("phone_number"));
+
+	            list.add(dto);
+	        }
+
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+
+	    return list;
+	}
+	
 
 }
