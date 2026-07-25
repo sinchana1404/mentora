@@ -8,6 +8,8 @@ public interface ExchangeRequestDAOINF {
 	    boolean sendRequest(ExchangeRequestDTO request);
 	    boolean acceptRequest(int requestId);
 	    boolean rejectRequest(int requestId);
+	    
+	    void deleteRequest(int requestId);
 
 	    List<ExchangeRequestDTO> getAllRequests();
 	    

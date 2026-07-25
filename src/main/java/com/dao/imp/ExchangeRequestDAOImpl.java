@@ -18,7 +18,7 @@ public class ExchangeRequestDAOImpl implements ExchangeRequestDAOINF {
 	}
 	@Override
 	public boolean sendRequest(ExchangeRequestDTO request) {
-		String query = "INSERT INTO exchange_requests(sender_id, receiver_id, offered_skill_id, requested_skill_id, message, status, request_date) VALUES(?,?,?,?,?,?,?)";
+		String query = "INSERT INTO exchange_requests(sender_id, receiver_id, offered_skill_id, requested_skill_id, message, status, request_date) VALUES(?,?,?,?,?,?,now())";
 
 		try {
 
@@ -30,7 +30,7 @@ public class ExchangeRequestDAOImpl implements ExchangeRequestDAOINF {
 			ps.setInt(4, request.getRequestedSkillId());
 			ps.setString(5, request.getMessage());
 			ps.setString(6, request.getStatus());
-			ps.setTimestamp(7, request.getRequestDate());
+			
 
 			int result = ps.executeUpdate();
 
@@ -150,5 +150,22 @@ public class ExchangeRequestDAOImpl implements ExchangeRequestDAOINF {
 
 		return list;
 	}
+	@Override
+	public void deleteRequest(int requestId) {
+		// TODO Auto-generated method stub
+		String query = "delete FROM exchange_requests where request_id=?";
+
+		try {
+			PreparedStatement ps = con.prepareStatement(query);
+			ps.setInt(1, requestId);
+			ps.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+	
 
 }

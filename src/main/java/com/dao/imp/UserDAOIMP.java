@@ -19,7 +19,7 @@ public class UserDAOIMP implements UserDAOINF {
 		@Override
 		public boolean registerUser(UserDTO user) {
 
-	        String query = "INSERT INTO users(user_fname,user_lname,email,bio,password,phone_number,create_at) VALUES(?,?,?,?,?,?,now()";
+	        String query = "INSERT INTO users(user_fname,user_lname,email,bio,password,phone_number,create_at) VALUES(?,?,?,?,?,?,now())";
 
 	        try {
 

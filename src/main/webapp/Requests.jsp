@@ -245,7 +245,8 @@ request.getRequestDispatcher("Login.jsp").forward(request, response);%>
 
                         <div class="actions">
 
-                            <form action = "" method = "post">
+                            <form action = "Cancel" method = "post">
+                            <input type= "hidden" name = "cancel" value = "<%= e.getRequestId()%>"/>
                             <button class="btn cancel-btn" type = "submit">
 
                                 <i class="bi bi-x-circle"></i>
@@ -355,20 +356,22 @@ request.getRequestDispatcher("Login.jsp").forward(request, response);%>
                         <div class="actions">
 
 
-                            <form action = "" method = "post">
+                            <form action = "Accept" method = "post">
                             <button class="btn accept-btn" type = "submit">
 
                                 <i class="bi bi-check-circle"></i>
+                               <input type= "hidden" name = "accept" value = "<%= r.getRequestId()%>"/>
 									
                                 Accept
 
                             </button>
 							</form>
-							<form action = "" method = "post">
+							<form action = "Reject" method = "post">
                             <button class="btn decline-btn" type = "submit">
 
                                 <i class="bi bi-x-circle"></i>
-
+								
+								  <input type= "hidden" name = "reject" value = "<%= r.getRequestId()%>"/>
                                 Decline
 
                             </button>

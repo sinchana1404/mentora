@@ -247,15 +247,17 @@ List<UserSkillDTO> skillList = usdao.getUserSkills(us.getUserId());
         </div>
 
         <div class="actions">
+        
+        <form action="SendRequestID" method="post">
 
+    <input type="hidden" name="receiverId" value="<%= us.getUserId()%>">
 
-            <button class="btn request-btn">
+    <button type="submit" class="btn request-btn">
+        <i class="bi bi-send"></i>
+        Send Request
+    </button>
 
-                <i class="bi bi-send"></i>
-
-               <a href = "SendRequest.jsp" style = "color : white; text-decoration :none;"> Send Request</a>
-
-            </button>
+</form>
 
         </div>
 
