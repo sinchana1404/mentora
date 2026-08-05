@@ -1,0 +1,300 @@
+@charset "UTF-8";
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+
+    background:#EEF4FF;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-height:100vh;
+
+}
+
+/* Main Card */
+
+.container{
+
+    width:520px;
+
+    background:#fff;
+
+    padding:45px;
+
+    border-radius:20px;
+
+    box-shadow:0 15px 40px rgba(11,45,109,.15);
+
+    animation:fadeIn .8s ease;
+
+}
+
+/* Animation */
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* Lock Icon */
+
+.lock{
+
+    width:80px;
+
+    height:80px;
+
+    background:#E8F0FF;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin:0 auto 20px;
+
+}
+
+.lock i{
+
+    font-size:34px;
+
+    color:#2563EB;
+
+}
+
+/* Heading */
+
+h1{
+
+    text-align:center;
+
+    color:#0B2D6D;
+
+    margin-bottom:10px;
+
+    font-size:38px;
+
+}
+
+.subtitle{
+
+    text-align:center;
+
+    color:#666;
+
+    margin-bottom:35px;
+
+    line-height:28px;
+
+    font-size:16px;
+
+}
+
+/* Labels */
+
+label{
+
+    display:block;
+
+    color:#0B2D6D;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    margin-bottom:8px;
+
+}
+
+/* Input */
+
+.input-box{
+
+    display:flex;
+
+    align-items:center;
+
+    background:#F8FBFF;
+
+    border:1px solid #D8E2F8;
+
+    border-radius:10px;
+
+    padding:0 15px;
+
+    margin-bottom:20px;
+
+    transition:.3s;
+
+}
+
+.input-box:focus-within{
+
+    border-color:#2563EB;
+
+    box-shadow:0 0 10px rgba(37,99,235,.2);
+
+}
+
+.icon{
+
+    color:#2563EB;
+
+    font-size:17px;
+
+}
+
+.input-box input{
+
+    width:100%;
+
+    border:none;
+
+    outline:none;
+
+    background:transparent;
+
+    padding:16px;
+
+    font-size:15px;
+
+}
+
+.eye{
+
+    color:#777;
+
+    cursor:pointer;
+
+}
+
+/* Password Hint */
+
+.hint{
+
+    color:#666;
+
+    font-size:14px;
+
+    margin-bottom:25px;
+
+}
+
+.hint i{
+
+    color:#2563EB;
+
+    margin-right:5px;
+
+}
+
+/* Button */
+
+button{
+
+    width:100%;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#0B2D6D;
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#2563EB;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 20px rgba(37,99,235,.35);
+
+}
+
+/* Back */
+
+.back{
+
+    display:block;
+
+    text-align:center;
+
+    margin-top:25px;
+
+    text-decoration:none;
+
+    color:#2563EB;
+
+    font-weight:600;
+
+    font-size:16px;
+
+}
+
+.back:hover{
+
+    text-decoration:underline;
+
+}
+
+/* Mobile */
+
+@media(max-width:600px){
+
+.container{
+
+    width:92%;
+
+    padding:30px;
+
+}
+
+h1{
+
+    font-size:30px;
+
+}
+
+}

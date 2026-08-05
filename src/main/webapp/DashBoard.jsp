@@ -90,6 +90,14 @@ href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.m
                  <a href = "Profile.jsp" class  = "sidebar_a" style = "text-decoration: none; color:white;">Profile</a>
 
             </li>
+            
+             <li>
+
+                <i class="bi bi-person"></i>
+
+                 <a href = "Reset.jsp" class  = "sidebar_a" style = "text-decoration: none; color:white;">Reset Password</a>
+
+            </li>
 
             <li>
 

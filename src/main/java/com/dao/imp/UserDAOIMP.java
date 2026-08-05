@@ -49,6 +49,34 @@ public class UserDAOIMP implements UserDAOINF {
 		
 		    
 	@Override
+		public UserDTO findByMail(String email) {
+		String query ="select * from users where email=?";
+		try {
+			PreparedStatement ps = con.prepareStatement(query);
+			ps.setString(1, email);
+			ResultSet rs = ps.executeQuery();
+			if(rs.next()) {
+				UserDTO user = new UserDTO();
+				user.setUserId(rs.getInt("user_id"));
+	            user.setUser_fname(rs.getString("user_fname"));
+	            user.setUser_lname(rs.getString("user_lname"));
+	            user.setEmail(rs.getString("email"));
+	            user.setCity(rs.getString("city"));
+	            user.setBio(rs.getString("bio"));
+	            user.setCreate_at(rs.getTimestamp("create_at"));
+	            user.setPassword(rs.getString("password"));
+	            user.setPhone_number(rs.getLong("phone_number"));
+	            return user;
+				
+			}
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+			
+			return null;
+		}
+	@Override
 	public UserDTO loginUser(String email, String password) {
 		   String query = "SELECT * FROM users WHERE email = ? AND password = ?";
 

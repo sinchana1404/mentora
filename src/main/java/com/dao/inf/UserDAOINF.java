@@ -20,5 +20,7 @@ public interface UserDAOINF {
 	    List<UserDTO> searchUsersBySkill(String skillName, String proficiency);
 
 	    List<UserDTO> searchUsersByCategory(String category, String proficiency);
+	    
+	    UserDTO findByMail(String email);
 	}
 

@@ -128,6 +128,9 @@
             text-decoration: none;
             font-size: 15px;
         }
+        
+       
+        
 
         .forgot:hover {
             color: #0D3B86;
@@ -235,11 +238,14 @@
 
                     </div>
 
-                    <a href="#" class="forgot">
+                    <a href="Forgot.jsp" class="forgot">
                         Forgot Password?
                     </a>
+                    
 
                 </div>
+                
+                
 
                 <button class="btn btn-login mb-4">
                     Sign In
