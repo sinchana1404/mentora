@@ -148,7 +148,7 @@ This project helped me gain practical experience in:
 
 GitHub: https://github.com/sinchana1404
 
-LinkedIn: https:www.linkedin.com/in/sinchana-r-973473282
+LinkedIn: https://www.linkedin.com/in/sinchana-r-973473282
 
 ---
 
