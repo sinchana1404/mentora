@@ -80,7 +80,7 @@ Mentora/
 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/mentora.git
+git clone https://github.com/sinchana1404/mentora.git
 ```
 
 2. Import the project into Eclipse as a **Dynamic Web Project**.
@@ -111,30 +111,6 @@ String password = "your_password";
 
 ```
 http://localhost:8080/Mentora
-```
-
----
-
-## 📸 Screenshots
-
-You can add screenshots here.
-
-### Home Page
-
-```
-(Add Screenshot)
-```
-
-### Dashboard
-
-```
-(Add Screenshot)
-```
-
-### Skill Exchange Requests
-
-```
-(Add Screenshot)
 ```
 
 ---
@@ -170,9 +146,9 @@ This project helped me gain practical experience in:
 
 **Your Name**
 
-GitHub: https://github.com/yourusername
+GitHub: https://github.com/sinchana1404
 
-LinkedIn: https://linkedin.com/in/yourprofile
+LinkedIn: https:www.linkedin.com/in/sinchana-r-973473282
 
 ---
 
